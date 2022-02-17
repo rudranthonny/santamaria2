@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\FormularioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,6 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+//ruta de Administrador
+Route::get('formulario',[FormularioController::class,'registrar'])->name('admin.formularios.registrar');
